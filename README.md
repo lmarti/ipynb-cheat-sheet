@@ -1,4 +1,4 @@
-ipython-cheat-sheet
+An IPython notebook cheat sheet
 ===================
 
-a latex cheat sheet with ipython commands and shortcuts
+A (hopefully stylish) cheat sheet containting IPython notebook commands and keyboard shortcuts to stick by your computer and show the world that you are an in-progress python guru.
