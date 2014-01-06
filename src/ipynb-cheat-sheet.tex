@@ -1,0 +1,185 @@
+\documentclass[11pt,landscape]{article}
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{color,graphicx,overpic}
+\usepackage{hyperref}
+
+\usepackage{cmbright}
+
+\pdfinfo{
+  /Title (iPython Cheat Sheet)
+  /Creator (TeX)
+  /Producer (pdfTeX 1.40.0)
+  /Author (Seamus)
+  /Subject (Example)
+  /Keywords (pdflatex, latex,pdftex,tex)}
+
+% This sets page margins to .5 inch if using letter paper, and to 1cm
+% if using A4 paper. (This probably isn't strictly necessary.)
+% If using another size paper, use default 1cm margins.
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+    {\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+    }
+
+% Turn off header and footer
+\pagestyle{empty}
+
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+% Define BibTeX command
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+%My Environments
+\newtheorem{example}[section]{Example}
+% -----------------------------------------------------------------------
+
+\begin{document}
+\raggedright
+\footnotesize
+\begin{multicols}{3}
+
+
+% multicol parameters
+% These lengths are set only within the two main columns
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+% title
+\begin{center}
+\centering
+\includegraphics[width=\columnwidth]{imgs/ipynblogo}\\
+\hfill\Large Cheat Sheet\\
+\rule{0.92\columnwidth}{0.25pt}
+\end{center}
+
+\section{iPython notebook}
+\begin{verbatim}
+$ ipython notebook
+\end{verbatim}
+
+\section{General}
+\begin{tabular}{@{}r@{\;}l@{}}
+	\texttt{help}: &	access to docstrings and Python manuals \\
+	\verb+%magic+: &	information on the 'magic' subsystem\\
+	\verb+%alias+: & 	system command aliases \\
+\end{tabular}
+
+\section{Magics}
+
+The magic function system provides a series of functions which allow you to
+control the behavior of IPython itself, plus a lot of system-type
+features.
+
+%load:     Load code into the current frontend.
+%lsmagic:    List currently available magic functions.
+
+%matplotlib:     %matplotlib [gui]
+
+%quickref
+
+%timeit:     Time execution of a Python statement or expression
+
+%%html:     Render the cell as a block of HTML
+%%javascript:     Run the cell block of Javascript code
+%%latex:     Render the cell as a block of latex
+\begin{tabular}{@{}r@{\;}l@{}}
+	
+	
+\end{tabular}
+
+\subsection{General}
+
+\section{Keyboard shortcuts}
+
+\subsection{General}
+\begin{tabular}{@{}r@{\;}l@{}}
+	\texttt{Tab}: &			completion in the local namespace \\
+	\texttt{Ctrl-m s}: &	save notebook \\
+	\texttt{Ctrl-m h}: &	show keyboard shortcuts \\
+	\texttt{Ctrl-m l}: & 	toggle line numbers \\
+	\texttt{Ctrl-r}: & 		search history for lines that match what is typed \\
+\end{tabular}
+
+\subsection{Editing}
+\begin{tabular}{@{}r@{\;}l@{}}
+	\texttt{Ctrl-m x}: &	cut cell \\
+    \texttt{Ctrl-m c}: &	copy cell \\
+	\texttt{Ctrl-m v}: &	paste cell \\
+	\texttt{Ctrl-m d}: &	delete cell \\
+	\texttt{Ctrl-m z}: &	undo last cell deletion \\
+\end{tabular}
+
+\subsection{Cell management}
+\begin{tabular}{@{}r@{\;}l@{}}
+	\texttt{Ctrl-m -}: &	split cell \\
+	\texttt{Ctrl-m a}: &	insert cell above $\uparrow$ \\
+	\texttt{Ctrl-m b}: &	insert cell below $\downarrow$ \\
+	\texttt{Ctrl-m k}: &	move cell up $\uparrow$ \\
+	\texttt{Ctrl-m j}: &	move cell down $\downarrow$ \\
+	\texttt{Ctrl-m p}: &	select previous $\uparrow$ \\
+	\texttt{Ctrl-m n}: &	select next $\downarrow$ \\
+\end{tabular}
+
+\subsection{Cell formatting}
+\begin{tabular}{@{}r@{\;}l@{}}
+	\texttt{Ctrl-m y}: &	code cell \\
+	\texttt{Ctrl-m m}: &	markdown cell \\
+	\texttt{Ctrl-m t}: &	raw cell \\
+	\texttt{Ctrl-m 1-6}: &	heading 1--6 cell \\
+\end{tabular}
+
+\subsection{Execution control}
+\begin{tabular}{@{}r@{\;}l@{}}
+	\texttt{Shift-Enter}: &	run cell \\
+	\texttt{Ctrl-Enter}: &	run cell in-place \\
+	\texttt{Alt-Enter}: &	run cell, insert below \\	
+	\texttt{Ctrl-m i}: &	interrupt kernel \\
+	\texttt{Ctrl-m .}: &	restart kernel \\
+	\texttt{Ctrl-m o}: &	toggle output \\
+	\texttt{Ctrl-m 0}: &	toggle output scroll \\
+\end{tabular}
+
+\section{Section 3}
+Etc.
+
+% You can even have references
+\rule{0.3\linewidth}{0.25pt}
+\scriptsize
+%\bibliographystyle{abstract}
+%\bibliography{refFile}
+\end{multicols}
+
+% Credits:
+% http://www.cheatography.com/dr-bagels/content/ipython-notebook-keyboard-shortcuts/
+\end{document}
