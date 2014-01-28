@@ -7,7 +7,9 @@
 \usepackage{color,graphicx,overpic}
 \usepackage{hyperref}
 
-\usepackage{cmbright}
+\usepackage[T1]{fontenc}
+\usepackage[defaultsans]{droidsans}
+\renewcommand*\familydefault{\sfdefault}
 
 \pdfinfo{
   /Title (iPython Cheat Sheet)
@@ -74,18 +76,17 @@
 \setlength{\postmulticols}{1pt}
 \setlength{\multicolsep}{1pt}
 \setlength{\columnsep}{2pt}
-
+{
 % title
-\begin{center}
-\centering
-\includegraphics[width=\columnwidth]{imgs/ipynblogo}\\
-\hfill\Large Cheat Sheet\\
-\rule{0.92\columnwidth}{0.25pt}
-\end{center}
-
+%\begin{center}
+\includegraphics[width=0.92\columnwidth]{imgs/ipynblogo}\\[1.0em]
+\hfill\Large Cheat Sheet
+\rule{\columnwidth}{0.11pt}
+%\end{center}
+}
 \section{iPython notebook}
 \begin{verbatim}
-$ ipython notebook
+$ipython notebook
 \end{verbatim}
 
 \section{General}
@@ -95,7 +96,7 @@ $ ipython notebook
 	\verb+%alias+: & 	system command aliases \\
 \end{tabular}
 
-\section{Magics}
+\section{Magic}
 
 The magic function system provides a series of functions which allow you to
 control the behavior of IPython itself, plus a lot of system-type

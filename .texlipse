@@ -1,12 +1,12 @@
 #TeXlipse project settings
-#Mon Jan 06 17:08:41 BRST 2014
+#Mon Jan 06 23:59:20 BRST 2014
 markTmpDer=true
 builderNum=2
 outputDir=out/
 makeIndSty=
 bibrefDir=
 outputFormat=pdf
-tempDir=tmp
+tempDir=out
 mainTexFile=ipynb-cheat-sheet.tex
 outputFile=ipynb-cheat-sheet.pdf
 langSpell=en
