@@ -1,4 +1,7 @@
-\documentclass[11pt,landscape]{article}
+%% This file is encoded in utf-8
+%%
+\documentclass[12pt,landscape,english]{article}
+\usepackage{babel}
 \usepackage{multicol}
 \usepackage{calc}
 \usepackage{ifthen}
@@ -8,6 +11,7 @@
 \usepackage{hyperref}
 
 \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage[defaultsans]{droidsans}
 \renewcommand*\familydefault{\sfdefault}
 
@@ -60,7 +64,7 @@
 \setlength{\parskip}{0pt plus 0.5ex}
 
 %My Environments
-\newtheorem{example}[section]{Example}
+%\newtheorem{example}[section]{Example}
 % -----------------------------------------------------------------------
 
 \begin{document}
@@ -77,15 +81,15 @@
 \setlength{\columnsep}{2pt}
 {
 % title
-%\begin{center}
 \includegraphics[width=0.92\columnwidth]{imgs/ipynblogo}\\[0.47em]
 \hfill\Large Cheat Sheet
+\let\thefootnote\relax
+\footnote{By Luis Martí --- \url{http://github.com/lmarti/ipybn-cheat-sheet}}
 \rule{\columnwidth}{0.11pt}
-%\end{center}
 }
 \section{iPython notebook}
 \begin{verbatim}
-$\,ipython notebook
+$ ipython notebook
 \end{verbatim}
 
 \section{General}
@@ -127,7 +131,7 @@ features.
 	\texttt{Ctrl-m s}: &	save notebook \\
 	\texttt{Ctrl-m h}: &	show keyboard shortcuts \\
 	\texttt{Ctrl-m l}: & 	toggle line numbers \\
-	\texttt{Ctrl-r}: & 		search history for lines that match what is typed \\
+	\texttt{Ctrl-r}: & 		search history \\
 \end{tabular}
 
 \subsection{Editing}
@@ -169,8 +173,17 @@ features.
 	\texttt{Ctrl-m 0}: &	toggle output scroll \\
 \end{tabular}
 
-\section{Section 3}
-Etc.
+\section{Cool packages}
+\subsection{Execution control}
+\begin{tabular}{@{}r@{\;}l@{}}
+	Plotly: &	https://plot.ly/api/ipython \\
+	\texttt{Ctrl-Enter}: &	run cell in-place \\
+	\texttt{Alt-Enter}: &	run cell, insert below \\	
+	\texttt{Ctrl-m i}: &	interrupt kernel \\
+	\texttt{Ctrl-m .}: &	restart kernel \\
+	\texttt{Ctrl-m o}: &	toggle output \\
+	\texttt{Ctrl-m 0}: &	toggle output scroll \\
+\end{tabular}
 
 % You can even have references
 \rule{0.3\linewidth}{0.25pt}
